@@ -79,6 +79,12 @@
   .svc.wide ul{columns:2;column-gap:36px}
   .svc.wide li{break-inside:avoid}
   .svc.opt{background:transparent;border-style:dashed}
+  .svc-price{display:flex;align-items:baseline;flex-wrap:wrap;gap:6px 10px;margin:4px 0 16px;padding:12px 14px;background:var(--soft);border-left:3px solid var(--orange)}
+  .svc-price .was{font-size:15px}
+  .svc-price .now{font-size:24px}
+  .svc-price .per{font-size:13.5px;color:var(--muted)}
+  .svc-price .extra{flex-basis:100%;font-size:13px;color:var(--muted)}
+  .svc.opt .svc-price{background:transparent}
 
   /* pricing */
   .price-wrap{margin-left:144px}
@@ -175,11 +181,6 @@
     <div class="eyebrow">Manager of the Year · Thought Leaders Club · Slide to Open Shipping Finance</div>
     <h1>Thynk <span class="x">×</span> Manager of the Year</h1>
     <p class="lead">Αναλαμβάνουμε τη διαχείριση των social media για το Manager of the Year, το Thought Leaders Club και το Slide to Open Shipping Finance από τον Οκτώβριο 2026 έως τον Μάρτιο 2027.</p>
-    <div class="kpis">
-      <div class="kpi hl"><div class="v">€700<small>+ ΦΠΑ / μήνα</small></div><div class="l">Εισαγωγικό μηνιαίο κόστος</div></div>
-      <div class="kpi"><div class="v">€0</div><div class="l">Setup και οργάνωση</div></div>
-      <div class="kpi"><div class="v">2<small>calls / μήνα</small></div><div class="l">Αποτελέσματα και στρατηγική</div></div>
-    </div>
   </div>
 </section>
 
@@ -224,6 +225,7 @@
         <div class="row"><span class="n">01</span><span class="tag or">Εφάπαξ · Δώρο συνεργασίας</span></div>
         <h3>Setup και οργάνωση</h3>
         <div class="when">Μια φορά, στην αρχή της συνεργασίας.</div>
+        <div class="svc-price"><span class="was">€400</span><span class="now zero">€0</span><span class="per">εφάπαξ, δώρο συνεργασίας</span></div>
         <ul>
           <li>Kick-off call για τους στόχους και τις προτεραιότητες της σεζόν.</li>
           <li>Έλεγχος των προφίλ social: bios, links, highlights και συνέπεια ταυτότητας ανά πλατφόρμα.</li>
@@ -232,7 +234,7 @@
           <li>Benchmark αντίστοιχων θεσμών και συνεδρίων, στην Ελλάδα και στο εξωτερικό.</li>
           <li>Content pillars και οδηγίες ύφους ανά πλατφόρμα.</li>
           <li>Νέο ημερολόγιο δημοσιεύσεων Οκτωβρίου–Δεκεμβρίου, με βάση το υλικό που ήδη υπάρχει.</li>
-          <li>Σύνδεση των λογαριασμών στο Metricool και στήσιμο live dashboard.</li>
+          <li>Οργάνωση και σύνδεση των λογαριασμών και στήσιμο live dashboard.</li>
           <li>Δομή UTM στα links εγγραφής, για να μετράμε τα «register now» ανά κανάλι.</li>
           <li>Στήσιμο της καμπάνιας brand safety στο Google Ads.</li>
           <li>Ροή έγκρισης και σταθερό κανάλι επικοινωνίας με την ομάδα σας.</li>
@@ -243,16 +245,18 @@
         <div class="row"><span class="n">02</span><span class="tag">Μηνιαία</span></div>
         <h3>Social media — Manager of the Year &amp; Thought Leaders Club</h3>
         <div class="when">Μηνιαία υπηρεσία.</div>
+        <div class="svc-price"><span class="was">€650</span><span class="now">€400</span><span class="per">+ ΦΠΑ / μήνα</span></div>
         <ul>
           <li>Το υλικό και τα κείμενα παρέχονται από την ομάδα σας.</li>
           <li>3 δημοσιεύσεις την εβδομάδα σε LinkedIn, Facebook και Instagram, συν reels στο TikTok.</li>
-          <li>Προγραμματισμός και δημοσίευση μέσω Metricool.</li>
+          <li>Προγραμματισμός και δημοσίευση των αναρτήσεων.</li>
           <li>Στρατηγική περιεχομένου: έρευνα τάσεων, ανταγωνισμού και αναγκών του brand, σε συνεργασία μαζί σας.</li>
           <li>Ειδοποίηση πριν από κάθε δημοσίευση, ώστε να γίνονται έγκαιρα τα reposts.</li>
           <li>Live reporting: dashboard με τα αποτελέσματα σε πραγματικό χρόνο, που το βλέπετε όποτε θέλετε.</li>
           <li>2 calls τον μήνα: ένα για τα αποτελέσματα και ένα για τη στρατηγική του επόμενου μήνα.</li>
           <li>Παρακολούθηση της καμπάνιας brand safety στο Google Ads.</li>
           <li>Μηνιαίο report.</li>
+          <li>Προαιρετικά: δημιουργία των κειμένων για τα posts, με ξεχωριστή χρέωση ανάλογα με τον όγκο.</li>
         </ul>
       </article>
 
@@ -260,42 +264,30 @@
         <div class="row"><span class="n">03</span><span class="tag">Μηνιαία · έως 03/2027</span></div>
         <h3>Social media — Slide to Open Shipping Finance</h3>
         <div class="when">Μηνιαία υπηρεσία, έως το συνέδριο της 2ας Μαρτίου 2027.</div>
+        <div class="svc-price"><span class="was">€450</span><span class="now">€300</span><span class="per">+ ΦΠΑ / μήνα</span></div>
         <ul>
           <li>Το υλικό και τα κείμενα παρέχονται από την ομάδα σας.</li>
           <li>2 δημοσιεύσεις την εβδομάδα σε LinkedIn, Facebook και Instagram, σύμφωνα με θεματικό ημερολόγιο.</li>
-          <li>Προγραμματισμός και δημοσίευση μέσω Metricool.</li>
-          <li>Η στρατηγική περιεχομένου, το live reporting και τα 2 μηνιαία calls καλύπτουν και τους δύο θεσμούς.</li>
+          <li>Προγραμματισμός και δημοσίευση των αναρτήσεων.</li>
+          <li>Στρατηγική περιεχομένου: έρευνα τάσεων, ανταγωνισμού και αναγκών του brand, σε συνεργασία μαζί σας.</li>
+          <li>Ειδοποίηση πριν από κάθε δημοσίευση, ώστε να γίνονται έγκαιρα τα reposts.</li>
+          <li>Live reporting: dashboard με τα αποτελέσματα σε πραγματικό χρόνο, που το βλέπετε όποτε θέλετε.</li>
+          <li>2 calls τον μήνα: ένα για τα αποτελέσματα και ένα για τη στρατηγική του επόμενου μήνα.</li>
+          <li>Μηνιαίο report.</li>
+          <li>Προαιρετικά: δημιουργία των κειμένων για τα posts, με ξεχωριστή χρέωση ανάλογα με τον όγκο.</li>
         </ul>
       </article>
 
-      <article class="svc">
+      <article class="svc wide">
         <div class="row"><span class="n">04</span><span class="tag">Ad hoc</span></div>
         <h3>Paid ads management</h3>
         <div class="when">Ανά ενεργοποίηση, όποτε το χρειάζεστε.</div>
+        <div class="svc-price"><span class="was">€350</span><span class="now">€250</span><span class="per">+ ΦΠΑ / μήνα</span><span class="extra">+ €100 ανά επιπλέον πλατφόρμα · το ad spend δεν περιλαμβάνεται</span></div>
         <ul>
           <li>Στρατηγική, στήσιμο και βελτιστοποίηση καμπανιών σε Meta, TikTok και LinkedIn.</li>
           <li>Ενεργοποιείται όποτε το χρειάζεστε, με ελάχιστη διάρκεια 1 μήνα, ώστε οι καμπάνιες να ολοκληρώνουν τη φάση εκμάθησης των πλατφορμών.</li>
           <li>Το διαφημιστικό budget (ad spend) καταβάλλεται απευθείας από εσάς στις πλατφόρμες.</li>
         </ul>
-      </article>
-
-      <article class="svc">
-        <div class="row"><span class="n">05</span><span class="tag">Ad hoc · ανά event</span></div>
-        <h3>Κάλυψη events επί τόπου</h3>
-        <div class="when">Όποτε το χρειάζεστε.</div>
-        <ul>
-          <li>Ομάδα της Thynk επί τόπου για παραγωγή περιεχομένου.</li>
-          <li>Λήψεις φωτογραφιών και βίντεο, σύντομες συνεντεύξεις με καλεσμένους και ομιλητές.</li>
-          <li>Live δημοσιεύσεις, backstage στιγμές και stories κατά τη διάρκεια της εκδήλωσης.</li>
-          <li>Προτεινόμενα events: η τελετή απονομής του Manager of the Year (17 Δεκεμβρίου, Intercontinental) και το Slide to Open Shipping Finance (2 Μαρτίου).</li>
-          <li>Δεν χρεώνουμε αμοιβή. Καλύπτετε μόνο τη μεταφορά και τη διαμονή δύο ατόμων της ομάδας μας από τα Ιωάννινα.</li>
-        </ul>
-      </article>
-
-      <article class="svc wide opt">
-        <div class="row"><span class="n">06</span><span class="tag">Προαιρετική επέκταση</span></div>
-        <h3>Δημιουργία κειμένων</h3>
-        <p style="margin:6px 0 0;font-size:15px;color:var(--ink-2)">Όποτε το χρειαστείτε, μπορούμε να αναλάβουμε και τη συγγραφή των κειμένων για τα posts. Κοστολογείται χωριστά, ανάλογα με τον όγκο.</p>
       </article>
 
     </div>
@@ -341,12 +333,6 @@
             <td class="num-c" data-l="Κανονική τιμή"><span class="was">€350</span></td>
             <td class="num-c"><span class="now">€250<small>+ €100 ανά επιπλέον πλατφόρμα</small></span></td>
           </tr>
-          <tr>
-            <td class="svc-name">Κάλυψη events επί τόπου</td>
-            <td data-l="Χρέωση">Ad hoc, ανά event</td>
-            <td class="num-c" data-l="Κανονική τιμή"><span style="color:var(--muted)">Ανάλογα με το event</span></td>
-            <td class="num-c"><span class="now txt">Μόνο μεταφορά &amp; διαμονή</span></td>
-          </tr>
         </tbody>
       </table>
 
@@ -367,10 +353,8 @@
     </div>
     <div class="terms">
       <div class="term"><h3>Διάρκεια</h3><p>Οκτώβριος 2026 – Οκτώβριος 2027.</p></div>
-      <div class="term"><h3>Επανεξέταση</h3><p>Στα τέλη Δεκεμβρίου, μετά την τελετή απονομής, αξιολογούμε μαζί τα αποτελέσματα και το πλάνο για το 2027.</p></div>
-      <div class="term"><h3>Τιμολόγηση</h3><p>Στην αρχή κάθε επόμενου μήνα, με εξόφληση εντός 15 ημερών.</p></div>
+      <div class="term"><h3>Πληρωμή</h3><p>Στην αρχή κάθε επόμενου μήνα, με εξόφληση εντός 15 ημερών.</p></div>
       <div class="term"><h3>Διαφημιστικό budget</h3><p>Καταβάλλεται απευθείας από εσάς στις πλατφόρμες και δεν περνά από τη Thynk.</p></div>
-      <div class="term"><h3>Συνέδριο της Ελληνικής Εταιρείας Logistics</h3><p>Κοστολογείται χωριστά, ad hoc για τους μήνες του συνεδρίου. Για να σας δώσουμε τιμή, χρειαζόμαστε το budget που έχετε διαθέσιμο.</p></div>
     </div>
   </div>
 </section>
@@ -385,7 +369,7 @@
       <li>Μας δίνετε πρόσβαση στους λογαριασμούς social και στους διαφημιστικούς λογαριασμούς.</li>
       <li>Μας στέλνετε το brief, τα reports, τον προγραμματισμό και τα έτοιμα κείμενα.</li>
       <li>Εντός μίας εβδομάδας από την έγκριση παραδίδουμε το νέο ημερολόγιο δημοσιεύσεων και επανεκκινούμε τις αναρτήσεις του Manager of the Year.</li>
-      <li>Ενεργοποιούμε την καμπάνια brand safety στο Google Ads και προτείνουμε προώθηση για το «Η ηγεσία δεν έχει φύλο, έχει αξίες».</li>
+      <li>Ενεργοποιούμε την καμπάνια brand safety στο Google Ads.</li>
       <li>Ορίζουμε σταθερό κανάλι επικοινωνίας με την κυρία Νάνση Βογιατζή και τη δημιουργική σας ομάδα.</li>
     </ol>
     <p class="cta-line">Για οποιαδήποτε απορία, είμαστε στη διάθεσή σας.</p>
