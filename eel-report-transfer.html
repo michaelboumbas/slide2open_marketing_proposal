@@ -11,116 +11,80 @@
 <style>
 :root{
   --bg:#f4f7f8; --paper:#ffffff; --ink:#14262e; --muted:#5b6b72; --line:#dfe7ea;
-  --lake:#1d5866; --lake-2:#2f7a8a; --sky:#d9eaf0; --accent:#e8742c; --accent-soft:#fdeee3;
-  --ok:#2e7d5b; --pending:#9a6b12; --pending-bg:#fbf3e0;
-  --r:14px;
+  --lake:#1d5866; --sky:#e3eff3; --accent:#e8742c; --accent-soft:#fdf1e8;
+  --good:#2e7d5b; --good-soft:#eaf5ef; --pending:#9a6b12; --pending-bg:#fbf3e0;
+  --r:16px;
 }
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:Commissioner,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;font-size:16px;line-height:1.6}
-.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
-a{color:var(--lake)}
-h1,h2,h3{line-height:1.2;margin:0}
-h2{font-size:1.6rem;font-weight:800;letter-spacing:-.01em}
-h3{font-size:1.08rem;font-weight:700}
-p{margin:.6em 0}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Commissioner,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;font-size:17px;line-height:1.65}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px}
+h1,h2,h3{margin:0;line-height:1.25}
+h2{font-size:1.45rem;font-weight:800;letter-spacing:-.01em}
+h3{font-size:1.05rem;font-weight:700}
+p{margin:.5em 0}
 .num{font-variant-numeric:tabular-nums}
 
-/* cover */
-.cover{background:var(--lake);color:#fff;padding:56px 0 48px}
-.cover .kicker{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;opacity:.8;font-weight:600}
-.cover h1{font-size:clamp(1.9rem,4.4vw,3rem);font-weight:800;margin:14px 0 10px;letter-spacing:-.02em;max-width:820px}
-.cover .sub{font-size:1.1rem;opacity:.92;max-width:760px}
-.cover .meta{display:flex;flex-wrap:wrap;gap:8px 24px;margin-top:28px;font-size:.92rem;opacity:.9}
-.cover .meta b{font-weight:700}
-.cover .theme{margin-top:26px;padding-top:18px;border-top:1px solid rgba(255,255,255,.25);font-size:.95rem;opacity:.85}
+.cover{background:var(--lake);color:#fff;padding:52px 0 44px}
+.cover .kicker{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;opacity:.8;font-weight:600}
+.cover h1{font-size:clamp(1.8rem,4.6vw,2.7rem);font-weight:800;margin:12px 0 10px;letter-spacing:-.02em}
+.cover .sub{font-size:1.08rem;opacity:.92}
+.cover .meta{margin-top:22px;font-size:.92rem;opacity:.85}
 
-/* nav */
-nav.toc{position:sticky;top:0;z-index:5;background:rgba(244,247,248,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
-nav.toc .wrap{display:flex;gap:6px;overflow-x:auto;padding-top:10px;padding-bottom:10px;scrollbar-width:none}
-nav.toc a{flex:0 0 auto;text-decoration:none;color:var(--ink);font-size:.86rem;font-weight:600;padding:6px 12px;border-radius:999px;background:var(--paper);border:1px solid var(--line)}
-nav.toc a:hover{border-color:var(--lake);color:var(--lake)}
+section{padding:44px 0 0}
+.intro{font-size:1.1rem;color:var(--muted);margin-top:8px}
 
-section{padding:52px 0 8px}
-.lead{font-size:1.06rem;color:var(--muted);max-width:780px;margin-top:10px}
-.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:22px;min-width:0}
-.grid{display:grid;gap:14px}
-.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
-.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
-.g4{grid-template-columns:repeat(4,minmax(0,1fr))}
-.mt{margin-top:22px}
+/* the 4 numbers */
+.big4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:20px}
+.n{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:18px}
+.n .v{font-size:2.1rem;font-weight:800;color:var(--lake);line-height:1.05;letter-spacing:-.02em}
+.n .l{font-size:.92rem;font-weight:600;margin-top:8px;line-height:1.35}
+.n.main{background:var(--lake);border-color:var(--lake);color:#fff}
+.n.main .v{color:#fff}
 
-/* KPI tiles */
-.kpi{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:18px 18px 16px}
-.kpi .v{font-size:2rem;font-weight:800;color:var(--lake);letter-spacing:-.02em;line-height:1.1}
-.kpi .l{font-size:.9rem;font-weight:600;margin-top:6px}
-.kpi .s{font-size:.8rem;color:var(--muted);margin-top:4px;line-height:1.4}
-.kpi.hero{background:var(--lake);border-color:var(--lake);color:#fff}
-.kpi.hero .v{color:#fff}.kpi.hero .s{color:rgba(255,255,255,.8)}
+/* worked / less */
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:20px}
+.box{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:22px}
+.box.good{border-top:5px solid var(--good)}
+.box.less{border-top:5px solid var(--accent)}
+.box ul{margin:12px 0 0;padding-left:20px}
+.box li{margin:0 0 10px}
+.box li:last-child{margin-bottom:0}
 
-/* summary list */
-.points{list-style:none;padding:0;margin:0;display:grid;gap:10px}
-.points li{background:var(--paper);border:1px solid var(--line);border-left:4px solid var(--lake);border-radius:10px;padding:12px 16px}
-.points li b{color:var(--lake)}
+/* channel cards */
+.ch{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:22px;margin-top:14px}
+.ch .head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.ch .role{font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--lake);background:var(--sky);padding:3px 10px;border-radius:99px}
+.facts{display:flex;flex-wrap:wrap;gap:10px 28px;margin:14px 0 6px}
+.facts div{font-size:.9rem;color:var(--muted)}
+.facts b{display:block;font-size:1.35rem;color:var(--ink);font-weight:800;line-height:1.2}
+.ch .take{margin-top:12px;padding-top:12px;border-top:1px solid var(--line)}
+.ch .take b{color:var(--lake)}
 
-/* tables */
-.tbl{width:100%;border-collapse:collapse;font-size:.93rem;background:var(--paper)}
-.tbl th,.tbl td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
-.tbl th{font-size:.76rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:700;background:#f9fbfc}
-.tbl td.r,.tbl th.r{text-align:right}
-.tbl tr:last-child td{border-bottom:0}
-.tblwrap{border:1px solid var(--line);border-radius:var(--r);overflow-x:auto;background:var(--paper)}
-.tbl .hl td{background:#f2f8fa}
+/* next */
+.next{counter-reset:k;list-style:none;padding:0;margin:20px 0 0;display:grid;gap:12px}
+.next li{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:18px 20px 18px 66px;position:relative}
+.next li::before{counter-increment:k;content:counter(k);position:absolute;left:20px;top:16px;width:32px;height:32px;border-radius:50%;background:var(--accent);color:#fff;font-weight:800;display:grid;place-items:center}
+.next b{display:block}
 
-/* bars */
-.bars{display:grid;gap:12px}
-.bar .top{display:flex;justify-content:space-between;gap:12px;font-size:.9rem}
-.bar .top span:first-child{font-weight:600}
-.bar .top span:last-child{font-weight:700;color:var(--lake);white-space:nowrap}
-.bar .track{height:10px;background:var(--sky);border-radius:99px;margin-top:6px;overflow:hidden}
-.bar .fill{height:100%;background:var(--lake);border-radius:99px}
-.bar .fill.acc{background:var(--accent)}
-.bar .note{font-size:.78rem;color:var(--muted);margin-top:3px}
+.pend{background:var(--pending-bg);border:1px dashed #d9b36a;border-radius:var(--r);padding:18px 20px;margin-top:20px}
+.pend h3{color:var(--pending)}
+.pend ul{margin:10px 0 0;padding-left:20px;font-size:.95rem}
 
-/* funnel */
-.funnel{display:grid;gap:8px}
-.fstep{display:grid;grid-template-columns:150px 1fr;gap:14px;align-items:center}
-.fstep .fl{font-size:.88rem;font-weight:600}
-.fstep .fb{background:var(--lake);color:#fff;border-radius:8px;padding:8px 12px;font-weight:700;font-size:.95rem;min-width:max-content}
-.fstep:last-child .fb{background:var(--accent)}
+details{margin-top:16px;background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:14px 20px}
+summary{cursor:pointer;font-weight:700;color:var(--muted)}
+details ul{font-size:.88rem;color:var(--muted);padding-left:18px}
 
-.callout{background:var(--accent-soft);border:1px solid #f6cfb3;border-radius:var(--r);padding:16px 18px}
-.callout b{color:#a8461a}
-.pending{background:var(--pending-bg);border:1px dashed #d9b36a;color:var(--pending);border-radius:8px;padding:2px 8px;font-size:.85rem;font-weight:600;white-space:nowrap}
-.pendbox{background:var(--pending-bg);border:1px dashed #d9b36a;border-radius:var(--r);padding:16px 18px}
-.pendbox h3{color:var(--pending)}
-.tag{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:2px 8px;border-radius:99px;background:var(--sky);color:var(--lake)}
-.lesson{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:20px}
-.lesson .n{font-size:2rem;font-weight:800;color:var(--accent);line-height:1}
-.lesson h3{margin-top:8px}
-.lesson .do{margin-top:10px;padding-top:10px;border-top:1px solid var(--line);font-size:.92rem}
-.lesson .do b{color:var(--lake)}
-.small{font-size:.85rem;color:var(--muted)}
-footer{margin-top:56px;padding:28px 0 40px;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem}
+footer{margin-top:48px;padding:24px 0 40px;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem}
 
-@media (max-width:860px){.g4{grid-template-columns:repeat(2,minmax(0,1fr))}.g3{grid-template-columns:minmax(0,1fr)}}
-@media (max-width:600px){
-  .g2{grid-template-columns:minmax(0,1fr)}
-  .wrap{padding:0 16px}
-  .cover{padding:40px 0 34px}
-  section{padding-top:40px}
-  .kpi .v{font-size:1.6rem}
-  .fstep{grid-template-columns:1fr;gap:4px}
-}
+@media (max-width:760px){.big4{grid-template-columns:repeat(2,minmax(0,1fr))}.two{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:420px){.wrap{padding:0 16px}.n .v{font-size:1.7rem}.next li{padding-left:58px}.next li::before{left:16px}}
 @media print{
   @page{size:A4;margin:14mm}
   body{background:#fff;font-size:11pt}
-  nav.toc{display:none}
-  .cover{-webkit-print-color-adjust:exact;print-color-adjust:exact}
-  section{padding-top:22px;break-inside:auto}
-  .card,.kpi,.lesson,.tblwrap,.points li,.pendbox,.callout{break-inside:avoid}
-  h2{break-after:avoid}
   *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .n,.box,.ch,.next li,.pend{break-inside:avoid}
+  details{display:none}
 }
 </style>
 </head>
@@ -128,252 +92,133 @@ footer{margin-top:56px;padding:28px 0 40px;border-top:1px solid var(--line);colo
 
 <header class="cover">
   <div class="wrap">
-    <div class="kicker">Ελληνική Εταιρεία Logistics (EEL) · Απολογισμός ψηφιακής επικοινωνίας</div>
-    <h1>27ο Πανελλήνιο Συνέδριο Εφοδιαστικής Αλυσίδας</h1>
-    <div class="sub">Τι έγινε στα ψηφιακά κανάλια τις πέντε εβδομάδες πριν από το Συνέδριο, τι απέδωσε και τι κρατάμε για την επόμενη διοργάνωση.</div>
-    <div class="meta">
-      <span><b>Περίοδος:</b> 1 Οκτωβρίου – 5 Νοεμβρίου 2026</span>
-      <span><b>Κανάλια:</b> LinkedIn · Instagram · Facebook · Meta Ads · Newsletter</span>
-      <span><b>Ημερομηνία:</b> 10 Νοεμβρίου 2026</span>
-    </div>
-    <div class="theme">Supply Chains Under Pressure: From Disruption to Foresight · How People, AI &amp; Logistics Are Shaping the Future<br>6 &amp; 7 Νοεμβρίου 2026 · Αίθουσα Νίκος Σκαλκώτας, Μέγαρο Μουσικής Αθηνών</div>
+    <div class="kicker">Ελληνική Εταιρεία Logistics (EEL)</div>
+    <h1>27ο Πανελλήνιο Συνέδριο Εφοδιαστικής Αλυσίδας: απολογισμός της ψηφιακής επικοινωνίας</h1>
+    <div class="sub">Τι κάναμε στα ψηφιακά κανάλια πριν από το Συνέδριο, τι απέδωσε και τι κρατάμε για την επόμενη φορά.</div>
+    <div class="meta">Περίοδος: 1 Οκτωβρίου – 5 Νοεμβρίου 2026 · Συνέδριο: 6 &amp; 7 Νοεμβρίου 2026, Μέγαρο Μουσικής Αθηνών</div>
   </div>
 </header>
 
-<nav class="toc" aria-label="Περιεχόμενα">
-  <div class="wrap">
-    <a href="#summary">Σύνοψη</a>
-    <a href="#timeline">Χρονολόγιο</a>
-    <a href="#linkedin">LinkedIn</a>
-    <a href="#meta">Instagram &amp; Facebook</a>
-    <a href="#ads">Διαφήμιση</a>
-    <a href="#newsletter">Newsletter</a>
-    <a href="#sponsors">Χορηγοί</a>
-    <a href="#lessons">Τι κρατάμε</a>
-    <a href="#method">Πηγές</a>
-  </div>
-</nav>
-
 <main class="wrap">
 
-<!-- SUMMARY -->
-<section id="summary">
-  <h2>Με μια ματιά</h2>
-  <p class="lead">Το Συνέδριο έφτασε τις πάνω από 900 συμμετοχές. Τα ψηφιακά κανάλια έδωσαν σχεδόν 300.000 προβολές και η στοχευμένη διαφήμιση έφερε 222 εγγραφές με κόστος €1,13 η καθεμία.</p>
-
-  <div class="grid g4 mt">
-    <div class="kpi hero"><div class="v num">900+</div><div class="l">Συμμετοχές στο Συνέδριο</div><div class="s">Δελτίο Τύπου EEL, 4/11/2026</div></div>
-    <div class="kpi"><div class="v num">~295k</div><div class="l">Προβολές (impressions)</div><div class="s">LinkedIn 49,6k · Meta Ads 244,9k</div></div>
-    <div class="kpi"><div class="v num">222</div><div class="l">Εγγραφές από Meta Ads</div><div class="s">€1,13 ανά εγγραφή, σε 10 ημέρες</div></div>
-    <div class="kpi"><div class="v num">€495</div><div class="l">Διαφημιστική δαπάνη</div><div class="s">Εντός του εγκεκριμένου €500</div></div>
+<section>
+  <h2>Το αποτέλεσμα σε τέσσερα νούμερα</h2>
+  <div class="big4">
+    <div class="n main"><div class="v num">900+</div><div class="l">συμμετοχές στο Συνέδριο</div></div>
+    <div class="n"><div class="v num">222</div><div class="l">εγγραφές ήρθαν από τη διαφήμιση στο Facebook &amp; Instagram</div></div>
+    <div class="n"><div class="v num">€1,13</div><div class="l">κόστος ανά εγγραφή από τη διαφήμιση</div></div>
+    <div class="n"><div class="v num">~295.000</div><div class="l">προβολές των αναρτήσεων και των διαφημίσεων</div></div>
   </div>
-  <div class="grid g4" style="margin-top:14px">
-    <div class="kpi"><div class="v num">31</div><div class="l">Αναρτήσεις στο LinkedIn</div><div class="s">+97 followers (1.148 → 1.245)</div></div>
-    <div class="kpi"><div class="v num">123k</div><div class="l">Άτομα σε μία εβδομάδα</div><div class="s">Reach της καμπάνιας awareness σε Facebook και Instagram</div></div>
-    <div class="kpi"><div class="v num">87k</div><div class="l">Προβολές βίντεο</div><div class="s">Καμπάνια awareness, 3″ και άνω</div></div>
-    <div class="kpi"><div class="v num">15,8k</div><div class="l">Newsletter sends</div><div class="s">4 αποστολές · έως 58% open rate</div></div>
-  </div>
-
-  <ul class="points" style="margin-top:28px">
-    <li><b>Οι άνθρωποι του κλάδου ήταν η δύναμη της επικοινωνίας.</b> Οι αναρτήσεις που παρουσίαζαν ομιλητές με το προφίλ τους είχαν κατά μέσο όρο <span class="num">3.235</span> προβολές στο LinkedIn, σχεδόν τριπλάσιες από τα βίντεο. Κάθε ομιλητής που μοιράστηκε την ανάρτηση έφερε το δίκτυό του.</li>
-    <li><b>Η διαφήμιση με στόχο την εγγραφή απέδωσε πολύ οικονομικά.</b> Με €251 φέραμε 222 εγγραφές, περίπου μία στις τέσσερις από όσες δηλώθηκαν, μέσα σε δέκα ημέρες.</li>
-    <li><b>Το LinkedIn ήταν το κύριο οργανικό κανάλι.</b> Instagram και Facebook έχουν μικρό κοινό για το Συνέδριο. Εκεί η εμβέλεια ήρθε από τη διαφήμιση.</li>
-    <li><b>Τα στοχευμένα email απέδωσαν πολλαπλάσια από τα μαζικά.</b> Στους εγγεγραμμένους το open rate έφτασε το 49–58%. Στη μεγάλη λίστα έμεινε στο 29%.</li>
-  </ul>
+  <p class="intro">Με συνολικό διαφημιστικό budget <b class="num">€495</b>, εντός του εγκεκριμένου €500, περίπου μία στις τέσσερις εγγραφές ήρθε μέσα από τη διαφήμιση.</p>
 </section>
 
-<!-- TIMELINE -->
-<section id="timeline">
-  <h2>Πώς χτίστηκε η επικοινωνία</h2>
-  <p class="lead">Τέσσερις φάσεις, από τη συζήτηση για το μέλλον του κλάδου έως την τελική ενημέρωση των συμμετεχόντων.</p>
-  <div class="grid g4 mt">
-    <div class="card"><span class="tag">1–12 Οκτ.</span><h3 style="margin-top:10px">Η συζήτηση ανοίγει</h3><p class="small">Vidcasts του Προέδρου της EEL για τη γεωπολιτική και τη νέα εποχή των εφοδιαστικών αλυσίδων. Πρώτοι ομιλητές και ο Platinum χορηγός.</p></div>
-    <div class="card"><span class="tag">13–26 Οκτ.</span><h3 style="margin-top:10px">Ομιλητές &amp; χορηγοί</h3><p class="small">Παρουσίαση ομιλητών (μεμονωμένα και σε carousel) και καλωσόρισμα των Silver χορηγών. Βίντεο του Προέδρου και της Αντιπροέδρου.</p></div>
-    <div class="card"><span class="tag">27 Οκτ. – 2 Νοε.</span><h3 style="margin-top:10px">Εγγραφές</h3><p class="small">Κεντρικοί ομιλητές, register now, αναλυτικό πρόγραμμα, newsletter στη μεγάλη λίστα. Έναρξη διαφήμισης με στόχο την εγγραφή.</p></div>
-    <div class="card"><span class="tag">3–5 Νοε.</span><h3 style="margin-top:10px">Τελική εβδομάδα</h3><p class="small">Κεντρικές ομιλίες με ώρες, promo video, vidcast του Platinum χορηγού, καμπάνια awareness, emails πρακτικής ενημέρωσης στους εγγεγραμμένους.</p></div>
-  </div>
-</section>
-
-<!-- LINKEDIN -->
-<section id="linkedin">
-  <h2>LinkedIn: το κύριο κανάλι</h2>
-  <p class="lead">31 αναρτήσεις, <span class="num">49.605</span> προβολές και <span class="num">1.085</span> αντιδράσεις. Η σελίδα κέρδισε <span class="num">97</span> νέους followers (+8,4%).</p>
-
-  <div class="grid g2 mt">
-    <div class="card">
-      <h3>Οι αναρτήσεις με τις περισσότερες προβολές</h3>
-      <div class="bars" style="margin-top:16px">
-        <div class="bar"><div class="top"><span>Αθανασία Φωτεινού, Lidl Hellas</span><span class="num">6.472</span></div><div class="track"><div class="fill" style="width:100%"></div></div><div class="note">Ομιλητής · 13/10</div></div>
-        <div class="bar"><div class="top"><span>Έξι ομιλητές (FMCG &amp; φαρμακευτικός κλάδος)</span><span class="num">6.303</span></div><div class="track"><div class="fill" style="width:97.4%"></div></div><div class="note">Carousel · 22/10</div></div>
-        <div class="bar"><div class="top"><span>Δημήτρης Γκαργκάσουλας, Coca-Cola Τρία Έψιλον</span><span class="num">5.385</span></div><div class="track"><div class="fill" style="width:83.2%"></div></div><div class="note">Ομιλητής · 8/10</div></div>
-        <div class="bar"><div class="top"><span>Έξι ομιλητές (Νεστλέ, DHL, Titan, Fourlis…)</span><span class="num">4.007</span></div><div class="track"><div class="fill" style="width:61.9%"></div></div><div class="note">Carousel · 19/10</div></div>
-        <div class="bar"><div class="top"><span>Εβίλη Πρωτοσύγγελου, Maersk</span><span class="num">2.405</span></div><div class="track"><div class="fill" style="width:37.2%"></div></div><div class="note">Ομιλητής · 9/10</div></div>
-        <div class="bar"><div class="top"><span>«Σας περιμένουμε αύριο»</span><span class="num">2.259</span></div><div class="track"><div class="fill" style="width:34.9%"></div></div><div class="note">Ενημέρωση · 5/11</div></div>
-      </div>
+<section>
+  <h2>Τι δούλεψε και τι λιγότερο</h2>
+  <div class="two">
+    <div class="box good">
+      <h3>Δούλεψε</h3>
+      <ul>
+        <li><b>Οι ομιλητές.</b> Οι αναρτήσεις που παρουσίαζαν ανθρώπους του κλάδου είχαν τις περισσότερες προβολές, γιατί οι ίδιοι τις μοιράστηκαν στο δίκτυό τους.</li>
+        <li><b>Η διαφήμιση για εγγραφές.</b> Σε δέκα μέρες έφερε 222 εγγραφές με κόστος λίγο πάνω από €1 η καθεμία.</li>
+        <li><b>Τα email στους εγγεγραμμένους.</b> Τα άνοιξε σχεδόν ένας στους δύο.</li>
+      </ul>
     </div>
-    <div class="card">
-      <h3>Μέσες προβολές ανά είδος ανάρτησης</h3>
-      <div class="bars" style="margin-top:16px">
-        <div class="bar"><div class="top"><span>Ομιλητής με προφίλ</span><span class="num">3.235</span></div><div class="track"><div class="fill acc" style="width:100%"></div></div><div class="note">5 αναρτήσεις</div></div>
-        <div class="bar"><div class="top"><span>Carousel ομιλητών</span><span class="num">2.381</span></div><div class="track"><div class="fill" style="width:73.6%"></div></div><div class="note">8 αναρτήσεις</div></div>
-        <div class="bar"><div class="top"><span>Ενημέρωση (πρόγραμμα, εγγραφές, «αύριο»)</span><span class="num">1.233</span></div><div class="track"><div class="fill" style="width:38.1%"></div></div><div class="note">3 αναρτήσεις</div></div>
-        <div class="bar"><div class="top"><span>Βίντεο (vidcasts, reels, promo)</span><span class="num">1.118</span></div><div class="track"><div class="fill" style="width:34.6%"></div></div><div class="note">7 αναρτήσεις</div></div>
-      </div>
-      <p class="small" style="margin-top:18px">Τα impressions είναι οργανικά: στο LinkedIn δεν τρέξαμε διαφήμιση.</p>
-    </div>
-  </div>
-
-  <div class="callout mt"><b>Γιατί δούλεψαν οι ομιλητές.</b> Κάθε ανάρτηση ομιλητή είχε tag στο πρόσωπο, στην εταιρεία του και στο ΔΣ της EEL. Όταν ο ομιλητής ή η εταιρεία του την αναδημοσίευε, η ανάρτηση έβγαινε σε ένα έτοιμο δίκτυο στελεχών του κλάδου. Αυτό το κοινό θέλουμε. Τα βίντεο, ακόμη και τα πολύ καλά, δεν κουβαλούν αυτόν τον μηχανισμό αν δεν «ανήκουν» σε κάποιον που θα τα μοιραστεί.</div>
-</section>
-
-<!-- IG / FB -->
-<section id="meta">
-  <h2>Instagram &amp; Facebook</h2>
-  <p class="lead">Οι σελίδες της Slide2Open σε Instagram και Facebook έχουν μικρό κοινό για ένα B2B συνέδριο. Οργανικά δίνουν παρουσία· την εμβέλεια την έδωσε η διαφήμιση.</p>
-  <div class="grid g3 mt">
-    <div class="kpi"><div class="v num">~80</div><div class="l">Μέση οργανική εμβέλεια ανά post στο Instagram</div><div class="s">23 αναρτήσεις · reels ~125 άτομα</div></div>
-    <div class="kpi"><div class="v num">~55</div><div class="l">Μέση οργανική εμβέλεια ανά post στο Facebook</div><div class="s">24 αναρτήσεις · reels 1.328 προβολές συνολικά</div></div>
-    <div class="kpi"><div class="v num">×50</div><div class="l">Άλμα στις ημερήσιες προβολές με τη διαφήμιση</div><div class="s">Instagram από &lt;200 σε έως 10.504 την ημέρα</div></div>
-  </div>
-  <p class="small mt">Followers: Instagram από 189 (αρχές Οκτωβρίου) σε 222 (5/11) · Facebook από 803 σε 820.</p>
-</section>
-
-<!-- ADS -->
-<section id="ads">
-  <h2>Διαφήμιση στη Meta (Facebook &amp; Instagram)</h2>
-  <p class="lead">Δύο καμπάνιες, με σαφή ρόλο η καθεμία: η πρώτη να φέρει εγγραφές, η δεύτερη να απλώσει το μήνυμα την τελευταία εβδομάδα.</p>
-
-  <div class="tblwrap mt">
-    <table class="tbl">
-      <thead><tr><th>Καμπάνια</th><th>Περίοδος</th><th class="r">Δαπάνη</th><th class="r">Reach</th><th class="r">Impressions</th><th class="r">Αποτέλεσμα</th><th class="r">Κόστος</th></tr></thead>
-      <tbody>
-        <tr class="hl"><td><b>Εγγραφές</b></td><td>27/10 →</td><td class="r num">€250,70</td><td class="r num">27.136</td><td class="r num">89.875</td><td class="r num"><b>222 εγγραφές</b></td><td class="r num"><b>€1,13</b> / εγγραφή</td></tr>
-        <tr><td><b>Awareness</b></td><td>3/11 →</td><td class="r num">€244,35</td><td class="r num">123.481</td><td class="r num">155.016</td><td class="r num">86.877 προβολές βίντεο</td><td class="r num">€0,003 / προβολή</td></tr>
-        <tr><td><b>Σύνολο</b></td><td></td><td class="r num"><b>€495,05</b></td><td class="r"></td><td class="r num"><b>244.891</b></td><td></td><td></td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="grid g2 mt">
-    <div class="card">
-      <h3>Από την προβολή στην εγγραφή</h3>
-      <div class="funnel" style="margin-top:16px">
-        <div class="fstep"><div class="fl">Προβολές</div><div><span class="fb num" style="display:inline-block;width:100%">89.875</span></div></div>
-        <div class="fstep"><div class="fl">Άτομα</div><div><span class="fb num" style="display:inline-block;width:78%">27.136</span></div></div>
-        <div class="fstep"><div class="fl">Κλικ στο link</div><div><span class="fb num" style="display:inline-block;width:52%">1.204 · CTR 1,34%</span></div></div>
-        <div class="fstep"><div class="fl">Επισκέψεις στη σελίδα</div><div><span class="fb num" style="display:inline-block;width:38%">589</span></div></div>
-        <div class="fstep"><div class="fl">Εγγραφές</div><div><span class="fb num" style="display:inline-block;width:26%">222</span></div></div>
-      </div>
-      <p class="small" style="margin-top:14px">Περίπου 4 στους 10 που έφτασαν στη σελίδα εγγραφής ολοκλήρωσαν την εγγραφή. Κόστος ανά κλικ €0,21.</p>
-    </div>
-    <div class="card">
-      <h3>Ποια δημιουργικά έφεραν εγγραφές</h3>
-      <div class="tblwrap" style="margin-top:14px">
-        <table class="tbl">
-          <thead><tr><th>Δημιουργικό</th><th class="r">Δαπάνη</th><th class="r">Εγγραφές</th><th class="r">€ / εγγρ.</th></tr></thead>
-          <tbody>
-            <tr><td>Φωτογραφία αίθουσας</td><td class="r num">€148,04</td><td class="r num"><b>133</b></td><td class="r num">€1,11</td></tr>
-            <tr><td>Φωτογραφία AI</td><td class="r num">€86,28</td><td class="r num">74</td><td class="r num">€1,17</td></tr>
-            <tr><td>Φωτογραφία προμηθευτή</td><td class="r num">€9,72</td><td class="r num">11</td><td class="r num">€0,88</td></tr>
-            <tr><td>Φωτογραφία hub</td><td class="r num">€6,66</td><td class="r num">4</td><td class="r num">€1,67</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <p class="small" style="margin-top:12px">Η εικόνα της αίθουσας, δηλαδή η εμπειρία του να είσαι εκεί, έφερε τις περισσότερες εγγραφές.</p>
-    </div>
-  </div>
-
-  <div class="callout mt"><b>Στην καμπάνια awareness</b> το βίντεο του Προέδρου της EEL για την Τεχνητή Νοημοσύνη και τους managers συγκέντρωσε 80.078 από τις 87.618 αλληλεπιδράσεις της καμπάνιας, 477 αντιδράσεις και 59 κοινοποιήσεις. Ένα πρόσωπο με σαφή άποψη τράβηξε περισσότερο ενδιαφέρον από το εταιρικό promo video.</div>
-</section>
-
-<!-- NEWSLETTER -->
-<section id="newsletter">
-  <h2>Newsletter</h2>
-  <p class="lead">Τέσσερις αποστολές μέσω MooSend, με <span class="num">15.807</span> sends και <span class="num">4.963</span> μοναδικά ανοίγματα. Η σύγκριση με το 25ο Συνέδριο (2024) δείχνει καθαρά πού βρίσκεται η αξία.</p>
-
-  <div class="tblwrap mt">
-    <table class="tbl">
-      <thead><tr><th>Ημ/νία</th><th>Θέμα</th><th>Λίστα</th><th class="r">Sends</th><th class="r">Open</th><th class="r">Click</th></tr></thead>
-      <tbody>
-        <tr><td>27/10</td><td>Οι κεντρικοί ομιλητές</td><td>Μεγάλη λίστα (TLC + μέλη EEL)</td><td class="r num">13.320</td><td class="r num">29,0%</td><td class="r num">0,89%</td></tr>
-        <tr><td>5/11</td><td>Δελτίο Τύπου: πάνω από 900 συμμετοχές</td><td>Δημοσιογράφοι</td><td class="r num">864</td><td class="r num">28,1%</td><td class="r num">1,75%</td></tr>
-        <tr class="hl"><td>5/11</td><td>Τα παράλληλα workshops</td><td>Εγγεγραμμένοι</td><td class="r num">816</td><td class="r num"><b>48,9%</b></td><td class="r num"><b>8,46%</b></td></tr>
-        <tr class="hl"><td>5/11</td><td>DSS · Μετάκληση στην πράξη</td><td>Εγγεγραμμένοι</td><td class="r num">807</td><td class="r num"><b>58,2%</b></td><td class="r num"><b>4,96%</b></td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <h3 class="mt">Σύγκριση με το 25ο Συνέδριο (2024)</h3>
-  <div class="tblwrap" style="margin-top:12px">
-    <table class="tbl">
-      <thead><tr><th>Αποστολή</th><th class="r">Sends</th><th class="r">Open</th><th class="r">Click</th></tr></thead>
-      <tbody>
-        <tr><td>2024 · Μεγάλη λίστα (29/10/2024)</td><td class="r num">14.040</td><td class="r num">41,0%</td><td class="r num">4,27%</td></tr>
-        <tr><td>2026 · Μεγάλη λίστα (27/10/2026)</td><td class="r num">13.320</td><td class="r num">29,0%</td><td class="r num">0,89%</td></tr>
-        <tr><td>2024 · Μέλη EEL, «Δηλώστε συμμετοχή» (25/10/2024)</td><td class="r num">307</td><td class="r num">58,7%</td><td class="r num">15,18%</td></tr>
-        <tr><td>2024 · Μέλη EEL, «Τελευταίες μέρες εγγραφών» (30/10/2024)</td><td class="r num">304</td><td class="r num">51,3%</td><td class="r num">21,38%</td></tr>
-      </tbody>
-    </table>
-  </div>
-  <p class="small" style="margin-top:12px">Οι μεγάλες λίστες έχουν κουραστεί γενικά: και άλλες αποστολές της ίδιας περιόδου κινούνται γύρω στο 29%. Οι μικρές λίστες με ανθρώπους του κλάδου ανοίγουν και πατούν δύο έως πέντε φορές περισσότερο. Η λίστα μελών της EEL είναι το πιο αποδοτικό κανάλι email που έχουμε.</p>
-</section>
-
-<!-- SPONSORS -->
-<section id="sponsors">
-  <h2>Προβολή χορηγών</h2>
-  <p class="lead">Οι Platinum και Silver χορηγοί είχαν ο καθένας αφιερωμένη ανάρτηση καλωσορίσματος σε LinkedIn, Instagram και Facebook, με tag στη σελίδα τους, και εμφανίστηκαν στα υλικά του Συνεδρίου.</p>
-  <div class="tblwrap mt">
-    <table class="tbl">
-      <thead><tr><th>Κατηγορία</th><th>Χορηγός</th><th>Ψηφιακή προβολή πριν από το Συνέδριο</th></tr></thead>
-      <tbody>
-        <tr><td><b>Platinum</b></td><td>PEOPLE</td><td>Καλωσόρισμα σε 3 κανάλια (6–7/10) · ο CEO στους κεντρικούς ομιλητές (carousel 3/11, πρόγραμμα, newsletter 27/10) · απόσπασμα vidcast σε 3 κανάλια (4/11) · δημιουργικό στη διαφήμιση awareness</td></tr>
-        <tr><td><b>Silver</b></td><td>Dynamic Staffing Services · BK Telematics · Gigawatt Energy · Mobile Technology · Protergia · CrediaBank · Poseidon Robotics</td><td>Καλωσόρισμα σε 3 κανάλια ο καθένας (19/10–3/11) · στελέχη τους στα carousels ομιλητών · αφιερωμένο email της DSS στους εγγεγραμμένους (5/11, 58% open) · ανάδειξη του Talent Connect της BK Telematics στο email των workshops</td></tr>
-      </tbody>
-    </table>
-  </div>
-  <p class="small" style="margin-top:12px">Σύνολο: 8 αναρτήσεις καλωσορίσματος × 3 κανάλια = 24 αναρτήσεις χορηγών, συν τις αναφορές μέσα σε ομιλητές, πρόγραμμα και emails. Μετά το Συνέδριο συνεχίζουμε με τα Sponsor Key Quotes (Platinum → Silver).</p>
-</section>
-
-<!-- LESSONS -->
-<section id="lessons">
-  <h2>Τι κρατάμε για το επόμενο Συνέδριο</h2>
-  <div class="grid g3 mt">
-    <div class="lesson"><div class="n">1</div><h3>Τα πρόσωπα του κλάδου κινούν την επικοινωνία</h3><p class="small">Οι ομιλητές με το προφίλ τους έφεραν τις περισσότερες προβολές, και το βίντεο του Προέδρου με άποψη έφερε τη μεγαλύτερη αλληλεπίδραση στη διαφήμιση.</p><div class="do"><b>Επόμενο βήμα:</b> κάθε ομιλητής με δική του ανάρτηση και έτοιμο κείμενο για αναδημοσίευση. Στα βίντεο, ένας ομιλητής με μία θέση αντί για γενικό promo.</div></div>
-    <div class="lesson"><div class="n">2</div><h3>Η διαφήμιση για εγγραφές να ξεκινά νωρίτερα</h3><p class="small">Με €1,13 ανά εγγραφή, η καμπάνια ήταν η φθηνότερη πηγή συμμετοχών. Έτρεξε μόνο δέκα ημέρες.</p><div class="do"><b>Επόμενο βήμα:</b> έναρξη 5–6 εβδομάδες πριν, με κλιμακούμενο budget και εικόνα της εμπειρίας (αίθουσα, κοινό, networking).</div></div>
-    <div class="lesson"><div class="n">3</div><h3>Στοχευμένα email αντί για μαζικά</h3><p class="small">Τα μέλη της EEL και οι εγγεγραμμένοι ανοίγουν 2–5 φορές περισσότερο από τη μεγάλη λίστα.</p><div class="do"><b>Επόμενο βήμα:</b> σειρά emails ειδικά για τα μέλη της EEL, με χρήσιμη πληροφορία και σαφές «Δηλώστε συμμετοχή», και καθαρισμός της μεγάλης λίστας.</div></div>
-  </div>
-</section>
-
-<!-- PENDING -->
-<section id="pending">
-  <div class="pendbox">
-    <h3>Στοιχεία που συμπληρώνονται</h3>
-    <div class="grid g3" style="margin-top:14px">
-      <div><span class="pending">Εκκρεμεί</span><p class="small">Τελικός αριθμός εγγραφών και, αν υπάρχει, κατανομή ανά ημέρα.</p></div>
-      <div><span class="pending">Εκκρεμεί</span><p class="small">Προσέλευση (check-ins) 6 &amp; 7 Νοεμβρίου.</p></div>
-      <div><span class="pending">Εκκρεμεί</span><p class="small">Εγγραφές και προσέλευση του 25ου Συνεδρίου (2024) για σύγκριση.</p></div>
+    <div class="box less">
+      <h3>Λιγότερο</h3>
+      <ul>
+        <li><b>Instagram και Facebook χωρίς διαφήμιση.</b> Οι σελίδες έχουν μικρό κοινό για ένα συνέδριο του κλάδου. Χωρίς διαφήμιση, λίγοι είδαν τις αναρτήσεις.</li>
+        <li><b>Το μεγάλο newsletter.</b> Το άνοιξε λιγότερο από ένας στους τρεις, πιο χαμηλά από το 2024.</li>
+        <li><b>Τα βίντεο στο LinkedIn.</b> Είχαν λιγότερες από τις μισές προβολές σε σχέση με τις αναρτήσεις ομιλητών.</li>
+      </ul>
     </div>
   </div>
 </section>
 
-<!-- METHOD -->
-<section id="method">
-  <h2>Πηγές &amp; μεθοδολογία</h2>
-  <div class="card mt">
-    <ul class="small" style="margin:0;padding-left:18px">
-      <li><b>LinkedIn, Instagram, Facebook (οργανικά):</b> Metricool, σελίδες Slide2Open, αναρτήσεις του Συνεδρίου 1/10–5/11/2026. Τα impressions του LinkedIn είναι οργανικά. Για Instagram και Facebook αναφέρεται η οργανική εμβέλεια ανά ανάρτηση.</li>
-      <li><b>Meta Ads:</b> Ads Manager, λογαριασμός «Slide2Open – EEL Conference 2026», 26/10–10/11/2026. Οι εγγραφές είναι το event «Complete Registration» του Meta Pixel με την προεπιλεγμένη απόδοση της Meta (κλικ και προβολή). Οι εγγραφές του συστήματος της διοργάνωσης θα τις επιβεβαιώσουν.</li>
-      <li><b>Newsletter:</b> MooSend, αποστολές EEL 27/10–5/11/2026 και, για σύγκριση, αποστολές του 25ου Συνεδρίου (Οκτώβριος 2024). Open rate = μοναδικά ανοίγματα / sends.</li>
-      <li><b>Συμμετοχές:</b> Δελτίο Τύπου της EEL, 4/11/2026 («Πάνω από 900 συμμετοχές»).</li>
-      <li>Η «προβολή» (impression) μετρά κάθε φορά που εμφανίστηκε μια ανάρτηση ή διαφήμιση· ο ίδιος άνθρωπος μπορεί να τη δει περισσότερες από μία φορές. Το «reach» μετρά μοναδικά άτομα.</li>
+<section>
+  <h2>Ανά κανάλι</h2>
+
+  <div class="ch">
+    <div class="head"><h3>LinkedIn</h3><span class="role">Κύριο κανάλι</span></div>
+    <div class="facts">
+      <div><b class="num">31</b>αναρτήσεις</div>
+      <div><b class="num">49.605</b>προβολές</div>
+      <div><b class="num">+97</b>νέοι followers</div>
+    </div>
+    <p>Οι καλύτερες αναρτήσεις ήταν η παρουσίαση της Αθανασίας Φωτεινού (Lidl Hellas) με <b class="num">6.472</b> προβολές και η παρουσίαση έξι ομιλητών της 22/10 με <b class="num">6.303</b>.</p>
+    <div class="take"><b>Συμπέρασμα:</b> στο LinkedIn την προβολή τη φέρνουν τα πρόσωπα. Όσο περισσότεροι ομιλητές μοιράζονται την ανάρτηση, τόσο πιο μακριά φτάνει.</div>
+  </div>
+
+  <div class="ch">
+    <div class="head"><h3>Διαφήμιση στο Facebook &amp; Instagram</h3><span class="role">Εγγραφές &amp; εμβέλεια</span></div>
+    <div class="facts">
+      <div><b class="num">€495</b>budget</div>
+      <div><b class="num">222</b>εγγραφές</div>
+      <div><b class="num">244.891</b>προβολές</div>
+    </div>
+    <p>Τρέξαμε δύο καμπάνιες. Η πρώτη (από 27/10, €251) είχε στόχο τις εγγραφές και έφερε τις 222. Η δεύτερη (από 3/11, €244) άπλωσε το μήνυμα την τελευταία εβδομάδα με βίντεο και έφτασε σε πάνω από 120.000 άτομα. Τις περισσότερες εγγραφές έφερε η φωτογραφία της αίθουσας, και τη μεγαλύτερη προσοχή το βίντεο του Προέδρου της EEL για την Τεχνητή Νοημοσύνη.</p>
+    <div class="take"><b>Συμπέρασμα:</b> η διαφήμιση ήταν ο φθηνότερος τρόπος να φέρουμε εγγραφές. Την επόμενη φορά να ξεκινήσει νωρίτερα.</div>
+  </div>
+
+  <div class="ch">
+    <div class="head"><h3>Instagram &amp; Facebook (οργανικά)</h3><span class="role">Παρουσία</span></div>
+    <div class="facts">
+      <div><b class="num">47</b>αναρτήσεις</div>
+      <div><b class="num">~50–80</b>άτομα ανά ανάρτηση</div>
+      <div><b class="num">+50</b>νέοι followers</div>
+    </div>
+    <div class="take"><b>Συμπέρασμα:</b> εδώ οι αναρτήσεις κρατούν την παρουσία του Συνεδρίου. Η εμβέλεια έρχεται μόνο με διαφήμιση.</div>
+  </div>
+
+  <div class="ch">
+    <div class="head"><h3>Newsletter</h3><span class="role">Ενημέρωση</span></div>
+    <div class="facts">
+      <div><b class="num">4</b>αποστολές</div>
+      <div><b class="num">49–58%</b>άνοιγμα στους εγγεγραμμένους</div>
+      <div><b class="num">29%</b>άνοιγμα στη μεγάλη λίστα</div>
+    </div>
+    <p>Τα email πρακτικής ενημέρωσης στους εγγεγραμμένους (workshops, DSS) άνοιξαν πολύ καλά. Το μεγάλο newsletter της 27/10 (13.320 παραλήπτες) άνοιξε 29%, έναντι 41% το 2024. Το 2024, τα email προς τα μέλη της EEL άνοιγαν πάνω από 50%.</p>
+    <div class="take"><b>Συμπέρασμα:</b> μικρές, στοχευμένες λίστες, όπως τα μέλη της EEL και οι εγγεγραμμένοι, αποδίδουν πολύ περισσότερο από τη μαζική αποστολή.</div>
+  </div>
+
+  <div class="ch">
+    <div class="head"><h3>Χορηγοί</h3><span class="role">Προβολή</span></div>
+    <p style="margin-top:12px">Ο Platinum χορηγός (PEOPLE) και οι επτά Silver χορηγοί είχαν ο καθένας ανάρτηση καλωσορίσματος σε LinkedIn, Instagram και Facebook. Στελέχη τους παρουσιάστηκαν στους ομιλητές. Η PEOPLE είχε επιπλέον τον CEO της στους κεντρικούς ομιλητές και απόσπασμα vidcast. Η DSS είχε αφιερωμένο email στους εγγεγραμμένους.</p>
+    <div class="take"><b>Συνέχεια:</b> μετά το Συνέδριο κάθε χορηγός θα έχει ανάρτηση με δήλωση του στελέχους του από τη σκηνή.</div>
+  </div>
+</section>
+
+<section>
+  <h2>Τι κάνουμε την επόμενη φορά</h2>
+  <ol class="next">
+    <li><b>Περισσότερα πρόσωπα, λιγότερα γενικά βίντεο.</b>Κάθε ομιλητής με δική του ανάρτηση και έτοιμο κείμενο για να τη μοιραστεί.</li>
+    <li><b>Διαφήμιση για εγγραφές από νωρίς.</b>Έναρξη 5–6 εβδομάδες πριν, αντί για δέκα μέρες, με εικόνες της αίθουσας και του κοινού.</li>
+    <li><b>Email ειδικά για τα μέλη της EEL.</b>Μια μικρή σειρά email προς τα μέλη, με σαφή πρόσκληση για εγγραφή, αντί για ένα μαζικό newsletter.</li>
+  </ol>
+
+  <div class="pend">
+    <h3>Συμπληρώνεται</h3>
+    <ul>
+      <li>Τελικός αριθμός εγγραφών και προσέλευση στις 6 &amp; 7 Νοεμβρίου.</li>
+      <li>Σύγκριση με το 25ο Συνέδριο (2024).</li>
     </ul>
   </div>
+
+  <details>
+    <summary>Από πού είναι τα νούμερα</summary>
+    <ul>
+      <li>Αναρτήσεις: Metricool, σελίδες Slide2Open σε LinkedIn, Instagram και Facebook, 1/10–5/11/2026.</li>
+      <li>Διαφήμιση: Meta Ads Manager, 26/10–10/11/2026. Εγγραφές = όσες κατέγραψε το Meta Pixel. Θα τις επιβεβαιώσουν οι εγγραφές του Συνεδρίου.</li>
+      <li>Newsletter: MooSend, αποστολές 27/10–5/11/2026 και, για σύγκριση, Οκτώβριος 2024.</li>
+      <li>Συμμετοχές: Δελτίο Τύπου της EEL, 4/11/2026.</li>
+      <li>Προβολές = φορές που εμφανίστηκε μια ανάρτηση ή διαφήμιση. Ο ίδιος άνθρωπος μπορεί να τη δει πάνω από μία φορά.</li>
+    </ul>
+  </details>
 </section>
 
 </main>
 
 <footer>
-  <div class="wrap">Slide2Open Communications · για την Ελληνική Εταιρεία Logistics (EEL) · Ανάλυση και παραγωγή: Thynk Digital Agency · Νοέμβριος 2026</div>
+  <div class="wrap">Slide2Open Communications για την Ελληνική Εταιρεία Logistics (EEL) · Ανάλυση: Thynk Digital Agency · Νοέμβριος 2026</div>
 </footer>
 </body>
 </html>
